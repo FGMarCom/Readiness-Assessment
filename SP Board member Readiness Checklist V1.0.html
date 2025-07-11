@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Member Readiness Assessment | Foundation Group</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #102a46;
+            --secondary: #7da851;
+            --accent: #489298;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.5;
+        }
+
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .progress-info {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 40px;
+            text-align: center;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary);
+            width: 0%;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .export-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .export-btn:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .intro-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .intro-header {
+            padding: 32px;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .intro-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .intro-description {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .intro-content {
+            padding: 32px;
+        }
+
+        .info-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Assessment Sections */
+        .assessment-section {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 24px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .section-description {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .section-content {
+            padding: 32px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checklist-item:hover {
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+            background: var(--white);
+        }
+
+        .checklist-item.completed {
+            border-color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .checkbox-container {
+            margin-right: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray-400);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-checkbox.checked {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .custom-checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .tip-card {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: var(--border-radius);
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        .tip-card strong {
+            color: #92400e;
+        }
+
+        .tip-card p {
+            color: #92400e;
+            margin: 0;
+        }
+
+        .example-card {
+            background: #dbeafe;
+            border: 1px solid #60a5fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .example-card h4 {
+            color: #1e40af;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .example-card ul {
+            color: #1e40af;
+            margin-left: 20px;
+        }
+
+        /* Summary and Actions */
+        .results-section {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .results-header {
+            padding: 24px 32px;
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .results-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .results-content {
+            padding: 32px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .summary-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .summary-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-card .amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .summary-card.positive .amount {
+            color: var(--success);
+        }
+
+        .summary-card.negative .amount {
+            color: var(--danger);
+        }
+
+        .readiness-analysis {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .readiness-analysis h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .readiness-analysis p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 16px;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background: #6b9142;
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 2px solid var(--gray-300);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-50);
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-accent:hover {
+            background: #3a7b7f;
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        /* Resources */
+        .resources-section {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        .resources-section h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: var(--gray-50);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-200);
+        }
+
+        .resource-item h4 {
+            margin-bottom: 8px;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .resource-item p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 0 16px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .progress-info {
+                margin: 0;
+                max-width: 100%;
+            }
+            
+            .intro-header,
+            .section-content,
+            .results-content {
+                padding: 24px;
+            }
+            
+            .intro-title {
+                font-size: 24px;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Print */
+        @media print {
+            .header, .action-buttons {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Foundation Group</a>
+                <div class="progress-info">
+                    <div class="progress-text" id="progressText">Complete the assessment below</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <button class="export-btn" onclick="generateReport()">Generate Report</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="intro-card">
+                <div class="intro-header">
+                    <h1 class="intro-title">Board Member Readiness Assessment</h1>
+                    <p class="intro-description">Evaluate your preparation for effective nonprofit board service across six critical areas</p>
+                </div>
+                <div class="intro-content">
+                    <div class="info-card">
+                        <h3>Why This Assessment Matters</h3>
+                        <p>Effective board service requires more than good intentions. This comprehensive assessment helps you identify strengths and development areas across mission alignment, legal knowledge, time commitment, conflict management, governance understanding, and personal contribution. Use your results to prepare for board service or enhance your current effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Alignment Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Mission Alignment
+                        <span class="section-count" id="mission-count">0/2</span>
+                    </h2>
+                    <p class="section-description">Evaluate your connection to the organization's purpose and values</p>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I understand and believe in the mission</div>
+                            <div class="item-description">Can you clearly articulate the organization's purpose, values, and intended impact in your community? Do you feel personally connected to this work?</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I know why this nonprofit exists and who it serves</div>
+                            <div class="item-description">Understand the target beneficiaries, community needs addressed, how success is measured, and the unique role this organization plays.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Pro Tip:</strong> Schedule time with the Executive Director to tour programs, meet clients, and see the mission in action. This firsthand experience deepens your understanding and passion.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Responsibility Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Legal Responsibility
+                        <span class="section-count" id="legal-count">0/3</span>
+                    </h2>
+                    <p class="section-description">Understand your fiduciary duties and legal obligations</p>
+                </div>
+                <div class="section-content">
+                    <div class="example-card">
+                        <h4>The Three Fiduciary Duties</h4>
+                        <ul>
+                            <li><strong>Duty of Care:</strong> Make informed decisions with reasonable attention</li>
+                            <li><strong>Duty of Loyalty:</strong> Act in the organization's best interests</li>
+                            <li><strong>Duty of Obedience:</strong> Follow the mission and comply with laws</li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I understand I'm legally accountable as a board member</div>
+                            <div class="item-description">Familiar with the three fiduciary duties: duty of care, duty of loyalty, and duty of obedience to the mission.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I agree to act in the best interest of the organization at all times</div>
+                            <div class="item-description">Committed to putting organizational needs above personal, professional, or financial interests in all board decisions.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I understand director and officer insurance coverage</div>
+                            <div class="item-description">Know what protection exists, potential personal liability, and circumstances not covered by insurance policies.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Legal Protection:</strong> Ask to review the organization's D&O insurance policy and understand any coverage limits or exclusions that might affect you.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time & Commitment Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Time & Commitment
+                        <span class="section-count" id="time-count">0/3</span>
+                    </h2>
+                    <p class="section-description">Assess your capacity for meaningful engagement</p>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="time">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I can attend meetings and stay engaged</div>
+                            <div class="item-description">Commit to regular attendance, thorough preparation by reading materials in advance, and active participation in discussions.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="time">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I'm willing to serve for the full term</div>
+                            <div class="item-description">Understand the term length, renewal expectations, and commitment to organizational continuity and relationship building.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="time">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I can commit 5-10 hours per month minimum</div>
+                            <div class="item-description">Time for board meetings, preparation, committee work, special events, and strategic planning sessions.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Time Management:</strong> Most effective board members spend 8-12 hours monthly on board activities. Block this time in your calendar like any important commitment.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conflict of Interest Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Conflict of Interest
+                        <span class="section-count" id="conflict-count">0/3</span>
+                    </h2>
+                    <p class="section-description">Evaluate potential conflicts and disclosure needs</p>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="conflict">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I've disclosed any personal or financial conflicts</div>
+                            <div class="item-description">Complete transparency about business relationships, investments, or other interests that could create conflicts with board decisions.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="conflict">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I'm not being paid by the nonprofit for my service to the board</div>
+                            <div class="item-description">Board service is voluntary with no compensation. Reasonable expense reimbursement for travel and meals may be allowed.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="conflict">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I have disclosed relationships to other board members or staff</div>
+                            <div class="item-description">Family relationships, business partnerships, or close personal relationships that could influence objectivity in decision-making.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Annual Process:</strong> Most organizations require annual conflict of interest disclosure forms. Be proactive about updating disclosures when circumstances change.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bylaws & Oversight Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Bylaws & Oversight
+                        <span class="section-count" id="bylaws-count">0/3</span>
+                    </h2>
+                    <p class="section-description">Review governance knowledge and oversight role</p>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="bylaws">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I've read the bylaws and governing documents</div>
+                            <div class="item-description">Understand organizational structure, decision-making processes, board member responsibilities, and committee structures.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="bylaws">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I understand the board oversees—it doesn't run daily operations</div>
+                            <div class="item-description">Clear distinction between governance role and management functions, respecting staff autonomy while ensuring accountability.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="bylaws">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I've reviewed recent board minutes and financial statements</div>
+                            <div class="item-description">Understand current organizational status, recent decisions, financial health, and ongoing challenges or opportunities.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Preparation Tip:</strong> Request the last 12 months of board minutes and the most recent audit or financial review before your first meeting.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Contribution Section -->
+            <div class="assessment-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Personal Contribution
+                        <span class="section-count" id="contribution-count">0/3</span>
+                    </h2>
+                    <p class="section-description">Plan your unique value and engagement strategy</p>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="contribution">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I'm ready to contribute time, skills, or money as needed</div>
+                            <div class="item-description">Understand expectations for personal giving, fundraising participation, and skill-based volunteering beyond board meetings.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="contribution">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I know what's expected beyond just showing up to meetings</div>
+                            <div class="item-description">Committee participation, event attendance, advocacy efforts, community representation, and strategic planning involvement.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="contribution">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">I can leverage my network and expertise for the organization</div>
+                            <div class="item-description">Willing to make strategic connections, provide professional expertise, and open doors for partnerships and opportunities.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Value Proposition:</strong> Consider how your skills, network, and resources can specifically advance this organization's mission and sustainability.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section">
+                <div class="results-header">
+                    <h2 class="results-title">Your Board Readiness Results</h2>
+                    <p>Review your assessment results and get personalized recommendations</p>
+                </div>
+                <div class="results-content">
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <h4>Items Complete</h4>
+                            <div class="amount" id="totalCompleted">0/17</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Readiness Score</h4>
+                            <div class="amount" id="readinessPercentage">0%</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Categories Complete</h4>
+                            <div class="amount" id="categoriesComplete">0/6</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Assessment Status</h4>
+                            <div class="amount" id="assessmentStatus">In Progress</div>
+                        </div>
+                    </div>
+
+                    <div class="readiness-analysis" id="readinessAnalysis">
+                        <h4>Assessment Analysis</h4>
+                        <p>Complete the assessment above to receive personalized feedback on your board readiness and recommended next steps.</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="generateReport()">Generate Full Report</button>
+                        <button class="btn btn-accent" onclick="exportResults()">Export Results</button>
+                        <button class="btn btn-secondary" onclick="resetAssessment()">Reset Assessment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h3>Board Excellence Resources</h3>
+                <div class="resource-grid">
+                    <div class="resource-item">
+                        <h4>Fiduciary Duties Guide</h4>
+                        <p>Comprehensive overview of legal responsibilities and liability protection for nonprofit board members.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Financial Oversight Training</h4>
+                        <p>Learn to read financial statements and ask the right questions about organizational finances.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Effective Board Meetings</h4>
+                        <p>Best practices for preparation, participation, and follow-up to maximize meeting effectiveness.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Strategic Planning Guide</h4>
+                        <p>How board members contribute to organizational vision, goal-setting, and strategic direction.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Fundraising for Boards</h4>
+                        <p>Understanding your role in development, donor cultivation, and making the case for support.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Risk Management</h4>
+                        <p>Identifying organizational risks, understanding insurance needs, and maintaining compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let checkedItems = new Set();
+        let categoryData = {
+            mission: { total: 2, completed: 0 },
+            legal: { total: 3, completed: 0 },
+            time: { total: 3, completed: 0 },
+            conflict: { total: 3, completed: 0 },
+            bylaws: { total: 3, completed: 0 },
+            contribution: { total: 3, completed: 0 }
+        };
+        let totalItems = 17;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCheckboxes();
+            updateAllResults();
+        });
+
+        function initializeCheckboxes() {
+            const checklistItems = document.querySelectorAll('.checklist-item');
+            
+            checklistItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const checkbox = item.querySelector('.custom-checkbox');
+                    const category = item.getAttribute('data-category');
+                    toggleItem(checkbox, item, category, index);
+                });
+            });
+        }
+
+        function toggleItem(checkbox, item, category, index) {
+            if (checkedItems.has(index)) {
+                // Uncheck
+                checkedItems.delete(index);
+                checkbox.classList.remove('checked');
+                item.classList.remove('completed');
+                categoryData[category].completed--;
+            } else {
+                // Check
+                checkedItems.add(index);
+                checkbox.classList.add('checked');
+                item.classList.add('completed');
+                categoryData[category].completed++;
+            }
+            
+            updateAllResults();
+        }
+
+        function updateAllResults() {
+            updateCategoryCounts();
+            updateProgressBar();
+            updateSummaryCards();
+            updateAnalysis();
+        }
+
+        function updateCategoryCounts() {
+            // Update individual category counts
+            for (const [category, data] of Object.entries(categoryData)) {
+                const countElement = document.getElementById(`${category}-count`);
+                if (countElement) {
+                    countElement.textContent = `${data.completed}/${data.total}`;
+                }
+            }
+        }
+
+        function updateProgressBar() {
+            const completed = checkedItems.size;
+            const percentage = Math.round((completed / totalItems) * 100);
+            
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            
+            const progressText = document.getElementById('progressText');
+            if (percentage === 100) {
+                progressText.textContent = 'Assessment Complete!';
+            } else if (percentage >= 50) {
+                progressText.textContent = `${percentage}% Complete - Keep going!`;
+            } else {
+                progressText.textContent = `${percentage}% Complete`;
+            }
+        }
+
+        function updateSummaryCards() {
+            const completed = checkedItems.size;
+            const percentage = Math.round((completed / totalItems) * 100);
+            const categoriesComplete = Object.values(categoryData).filter(cat => cat.completed === cat.total).length;
+            
+            document.getElementById('totalCompleted').textContent = `${completed}/${totalItems}`;
+            document.getElementById('readinessPercentage').textContent = `${percentage}%`;
+            document.getElementById('categoriesComplete').textContent = `${categoriesComplete}/6`;
+            
+            // Update readiness percentage styling
+            const percentageCard = document.getElementById('readinessPercentage').parentElement;
+            if (percentage >= 80) {
+                percentageCard.className = 'summary-card positive';
+            } else if (percentage >= 60) {
+                percentageCard.className = 'summary-card';
+            } else {
+                percentageCard.className = 'summary-card negative';
+            }
+            
+            // Update assessment status
+            const statusElement = document.getElementById('assessmentStatus');
+            if (percentage === 100) {
+                statusElement.textContent = 'Complete';
+                statusElement.parentElement.className = 'summary-card positive';
+            } else if (percentage >= 50) {
+                statusElement.textContent = 'In Progress';
+                statusElement.parentElement.className = 'summary-card';
+            } else {
+                statusElement.textContent = 'Getting Started';
+                statusElement.parentElement.className = 'summary-card';
+            }
+        }
+
+        function updateAnalysis() {
+            const percentage = Math.round((checkedItems.size / totalItems) * 100);
+            const analysisDiv = document.getElementById('readinessAnalysis');
+            
+            let analysis = '<h4>Assessment Analysis</h4>';
+            
+            if (percentage === 100) {
+                analysis += '<p><strong>Outstanding Board Readiness!</strong> You demonstrate exceptional preparation across all areas of board service. You\'re ready to make a meaningful impact and should consider leadership opportunities.</p>';
+                analysis += '<p><strong>Next Steps:</strong> Seek board positions that align with your passion, consider committee leadership roles, and mentor other potential board members.</p>';
+            } else if (percentage >= 80) {
+                analysis += '<p><strong>Strong Board Readiness.</strong> You show excellent preparation with minor areas to strengthen. Focus on completing the remaining items for full readiness.</p>';
+                analysis += '<p><strong>Recommended:</strong> Address remaining gaps and consider joining boards where you can make immediate contributions.</p>';
+            } else if (percentage >= 60) {
+                analysis += '<p><strong>Good Foundation.</strong> You have solid understanding in several areas but need development in others before taking on board responsibilities.</p>';
+                analysis += '<p><strong>Recommended:</strong> Complete board governance training and consider volunteering with organizations before joining boards.</p>';
+            } else if (percentage >= 30) {
+                analysis += '<p><strong>Building Knowledge.</strong> You\'re making progress but need significant development before board service. Focus on learning and preparation.</p>';
+                analysis += '<p><strong>Recommended:</strong> Attend nonprofit governance workshops, shadow current board members, and gain volunteer experience.</p>';
+            } else {
+                analysis += '<p><strong>Starting Your Journey.</strong> Board service requires substantial preparation across multiple areas. Use this assessment to guide your development plan.</p>';
+                analysis += '<p><strong>Essential Steps:</strong> Complete formal training, volunteer with nonprofits, and connect with experienced board members for mentoring.</p>';
+            }
+            
+            analysisDiv.innerHTML = analysis;
+        }
+
+        function generateReport() {
+            const percentage = Math.round((checkedItems.size / totalItems) * 100);
+            let report = "NONPROFIT BOARD READINESS ASSESSMENT REPORT\n";
+            report += "=" + "=".repeat(50) + "\n\n";
+            report += `Overall Readiness Score: ${percentage}% (${checkedItems.size}/${totalItems} items completed)\n\n`;
+            
+            report += "CATEGORY BREAKDOWN:\n";
+            report += "-".repeat(30) + "\n";
+            
+            const categoryNames = {
+                mission: 'Mission Alignment',
+                legal: 'Legal Responsibility',
+                time: 'Time & Commitment', 
+                conflict: 'Conflict of Interest',
+                bylaws: 'Bylaws & Oversight',
+                contribution: 'Personal Contribution'
+            };
+
+            for (const [key, name] of Object.entries(categoryNames)) {
+                const data = categoryData[key];
+                const catPercentage = Math.round((data.completed / data.total) * 100);
+                const status = catPercentage === 100 ? '✓ Complete' : catPercentage >= 66 ? '◐ Nearly Complete' : '○ Needs Development';
+                report += `${name}: ${catPercentage}% (${data.completed}/${data.total}) ${status}\n`;
+            }
+
+            report += "\nREADINESS ASSESSMENT:\n";
+            report += "-".repeat(30) + "\n";
+            
+            if (percentage >= 90) {
+                report += "EXCEPTIONAL READINESS - You demonstrate outstanding preparation for nonprofit board service.\n\n";
+                report += "RECOMMENDED ACTIONS:\n";
+                report += "• Seek board opportunities with organizations aligned to your passion\n";
+                report += "• Consider leadership roles or committee chair positions\n";
+                report += "• Mentor other potential board members\n";
+                report += "• Pursue advanced governance training\n";
+            } else if (percentage >= 80) {
+                report += "STRONG READINESS - You show excellent preparation with minor areas to address.\n\n";
+                report += "FOCUS AREAS:\n";
+                for (const [key, data] of Object.entries(categoryData)) {
+                    if (data.completed < data.total) {
+                        report += `• Complete ${categoryNames[key]} preparation\n`;
+                    }
+                }
+            } else if (percentage >= 60) {
+                report += "MODERATE READINESS - Good foundation with important development needed.\n\n";
+                report += "PRIORITY DEVELOPMENT:\n";
+                for (const [key, data] of Object.entries(categoryData)) {
+                    if (data.completed < data.total * 0.7) {
+                        report += `• Strengthen ${categoryNames[key]} understanding\n`;
+                    }
+                }
+                report += "• Consider board training programs\n";
+                report += "• Shadow current board members\n";
+            } else {
+                report += "FOUNDATIONAL DEVELOPMENT NEEDED - Significant preparation required.\n\n";
+                report += "ESSENTIAL STEPS:\n";
+                report += "• Complete formal board governance training\n";
+                report += "• Volunteer with organizations to gain experience\n";
+                report += "• Connect with nonprofit leaders for mentoring\n";
+                report += "• Research best practices in nonprofit governance\n";
+            }
+
+            report += "\n" + "=".repeat(50) + "\n";
+            report += "This assessment was provided by Foundation Group.\n";
+            report += "For additional resources and board training, visit our website.\n";
+            
+            alert(report);
+        }
+
+        function exportResults() {
+            const percentage = Math.round((checkedItems.size / totalItems) * 100);
+            alert(`Export Feature\n\nReadiness Score: ${percentage}%\n\nThis feature would generate a downloadable PDF with:\n• Complete assessment results\n• Category-by-category analysis\n• Personalized development plan\n• Resource recommendations\n• Next steps guide\n\nContact Foundation Group to implement full export functionality.`);
+        }
+
+        function resetAssessment() {
+            if (confirm('Are you sure you want to reset your entire assessment? This will clear all progress and cannot be undone.')) {
+                checkedItems.clear();
+                
+                // Reset all checkboxes and items
+                document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('checked');
+                });
+                
+                document.querySelectorAll('.checklist-item').forEach(item => {
+                    item.classList.remove('completed');
+                });
+                
+                // Reset category data
+                for (const category of Object.keys(categoryData)) {
+                    categoryData[category].completed = 0;
+                }
+                
+                updateAllResults();
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
