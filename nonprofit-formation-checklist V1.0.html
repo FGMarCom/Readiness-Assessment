@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonprofit Formation Checklist | Foundation Group</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #102a46;
+            --secondary: #7da851;
+            --accent: #489298;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.5;
+        }
+
+        .app-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .progress-info {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 40px;
+            text-align: center;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary);
+            width: 0%;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .export-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .export-btn:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .intro-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .intro-header {
+            padding: 32px;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .intro-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .intro-description {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .intro-content {
+            padding: 32px;
+        }
+
+        .info-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .timeline-overview {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 16px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+        }
+
+        .timeline-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        /* Assessment Sections */
+        .assessment-section {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 24px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .section-description {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .section-content {
+            padding: 32px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checklist-item:hover {
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+            background: var(--white);
+        }
+
+        .checklist-item.completed {
+            border-color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .checkbox-container {
+            margin-right: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray-400);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-checkbox.checked {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .custom-checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .item-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        .tag.critical {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .tag.required {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tip-card {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: var(--border-radius);
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        .tip-card strong {
+            color: #92400e;
+        }
+
+        .tip-card p {
+            color: #92400e;
+            margin: 0;
+        }
+
+        .example-card {
+            background: #dbeafe;
+            border: 1px solid #60a5fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .example-card h4 {
+            color: #1e40af;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .example-card ul {
+            color: #1e40af;
+            margin-left: 20px;
+        }
+
+        /* Summary and Actions */
+        .results-section {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .results-header {
+            padding: 24px 32px;
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .results-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .results-content {
+            padding: 32px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .summary-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .summary-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-card .amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .summary-card.positive .amount {
+            color: var(--success);
+        }
+
+        .summary-card.negative .amount {
+            color: var(--danger);
+        }
+
+        .readiness-analysis {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .readiness-analysis h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .readiness-analysis p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .priority-items {
+            background: var(--white);
+            border: 1px solid var(--danger);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .priority-items h4 {
+            color: var(--danger);
+            margin-bottom: 12px;
+        }
+
+        .priority-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .priority-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            font-size: 14px;
+        }
+
+        .priority-list li:last-child {
+            border-bottom: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 16px;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background: #6b9142;
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 2px solid var(--gray-300);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-50);
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-accent:hover {
+            background: #3a7b7f;
+            box-shadow: var(--shadow);
+            transform: translateY(-1px);
+        }
+
+        /* Resources */
+        .resources-section {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        .resources-section h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: var(--gray-50);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-200);
+        }
+
+        .resource-item h4 {
+            margin-bottom: 8px;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .resource-item p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 0 16px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .progress-info {
+                margin: 0;
+                max-width: 100%;
+            }
+            
+            .intro-header,
+            .section-content,
+            .results-content {
+                padding: 24px;
+            }
+            
+            .intro-title {
+                font-size: 24px;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Print */
+        @media print {
+            .header, .action-buttons {
+                display: none;
+            }
+        }
+
+        /* Collapse/Expand functionality */
+        .section-header {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .section-toggle {
+            position: absolute;
+            right: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.collapsed .section-toggle {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .section-content.collapsed {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Foundation Group</a>
+                <div class="progress-info">
+                    <div class="progress-text" id="progressText">Track your nonprofit formation journey</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <button class="export-btn" onclick="generateReport()">Generate Report</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="intro-card">
+                <div class="intro-header">
+                    <h1 class="intro-title">501(c)(3) Nonprofit Formation Checklist</h1>
+                    <p class="intro-description">Your comprehensive guide to starting a tax-exempt nonprofit organization in the United States</p>
+                </div>
+                <div class="intro-content">
+                    <div class="info-card">
+                        <h3>Welcome to Your Nonprofit Journey</h3>
+                        <p>Starting a 501(c)(3) nonprofit requires careful planning, legal compliance, and strategic thinking. This interactive checklist guides you through every essential step, from initial mission development to ongoing compliance. Track your progress, access resources, and ensure nothing is overlooked as you build an organization that will make a lasting impact.</p>
+                    </div>
+                    <div class="timeline-overview">
+                        <div class="timeline-item">
+                            <h4>Phase 1</h4>
+                            <p>Mission & Legal Formation</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 2</h4>
+                            <p>IRS Application</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 3</h4>
+                            <p>Operations Setup</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 4</h4>
+                            <p>Launch & Compliance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Mission & Vision Development
+                        <span class="section-count" id="mission-count">0/4</span>
+                    </h2>
+                    <p class="section-description">Define your nonprofit's purpose and establish its foundation</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Clarify mission statement and community need</div>
+                            <div class="item-description">Define a clear, concise mission statement that addresses a genuine community need. Ensure alignment with IRS charitable purposes (charitable, educational, religious, etc.) for 501(c)(3) status.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Critical First Step</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Conduct needs assessment</div>
+                            <div class="item-description">Research existing services in your area to avoid duplication. Document the gap your nonprofit will fill and gather data supporting the need for your services.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create vision statement</div>
+                            <div class="item-description">Develop an inspiring vision statement that describes the long-term change you hope to achieve. This guides strategic planning and motivates stakeholders.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="mission">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Define target beneficiaries and service area</div>
+                            <div class="item-description">Clearly identify who you will serve, their specific needs, and the geographic area of operation. This focus helps with program design and funding applications.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Pro Tip:</strong> Your mission statement should pass the "T-shirt test" - is it clear and compelling enough that supporters would proudly wear it? Keep it under 20 words if possible.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Requirements Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Legal Formation & Registration
+                        <span class="section-count" id="legal-count">0/8</span>
+                    </h2>
+                    <p class="section-description">Complete all federal and state legal requirements</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Choose and reserve nonprofit name</div>
+                            <div class="item-description">Select a unique name that complies with state naming rules. Check availability with your Secretary of State and consider reserving it. Also secure matching domain name and social media handles.</div>
+                            <div class="item-tags">
+                                <span class="tag required">State Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">File Articles of Incorporation with state</div>
+                            <div class="item-description">Prepare and file Articles of Incorporation with your state (usually Secretary of State). Include IRS-required language: statement of exempt purpose and dissolution clause for 501(c)(3) status.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Legal Requirement</span>
+                                <span class="tag">Fee Required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Obtain Employer Identification Number (EIN)</div>
+                            <div class="item-description">Apply for an EIN from the IRS online (free and immediate). Required for bank accounts, tax filings, and hiring employees. Needed even if you won't have employees initially.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">IRS Requirement</span>
+                                <span class="tag">Free</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Draft organizational bylaws</div>
+                            <div class="item-description">Create comprehensive bylaws covering board structure, officer roles, meeting procedures, and amendment processes. Required by IRS for 501(c)(3) application.</div>
+                            <div class="item-tags">
+                                <span class="tag required">IRS Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Apply for 501(c)(3) tax-exempt status</div>
+                            <div class="item-description">File IRS Form 1023 ($600 fee) or Form 1023-EZ ($275 fee) within 27 months of incorporation. Include Articles, bylaws, financial projections, and program descriptions.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Federal Requirement</span>
+                                <span class="tag">Fee Required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Register for state tax exemptions</div>
+                            <div class="item-description">After receiving IRS determination letter, apply for state income tax and sales tax exemptions. Requirements vary by state - some automatic, others require separate applications.</div>
+                            <div class="item-tags">
+                                <span class="tag">State Specific</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Register for charitable solicitation</div>
+                            <div class="item-description">If fundraising, register with your state (usually Attorney General) before soliciting donations. 40 states require registration. May need to register in multiple states for online fundraising.</div>
+                            <div class="item-tags">
+                                <span class="tag required">Before Fundraising</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="legal">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Obtain necessary licenses and permits</div>
+                            <div class="item-description">Research and obtain any required local business licenses, zoning permits, or program-specific licenses (e.g., childcare, food service, healthcare).</div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Form 1023-EZ Eligibility</h4>
+                        <ul>
+                            <li>Projected gross receipts ≤ $50,000 annually</li>
+                            <li>Total assets ≤ $250,000</li>
+                            <li>Not a church, school, or hospital</li>
+                            <li>Not a foreign organization</li>
+                            <li>Filing fee: $275 (vs. $600 for full Form 1023)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Board Formation Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Board Formation & Governance
+                        <span class="section-count" id="board-count">0/7</span>
+                    </h2>
+                    <p class="section-description">Build a strong, engaged board of directors</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Recruit initial board of directors</div>
+                            <div class="item-description">Assemble at least 3 board members (most states' minimum) who are passionate about the mission and bring diverse skills. Consider expertise in finance, programs, fundraising, and governance.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Legal Minimum</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Elect board officers</div>
+                            <div class="item-description">Designate key officers: President/Chair (leads meetings), Treasurer (financial oversight), and Secretary (maintains records). Define roles clearly in bylaws.</div>
+                            <div class="item-tags">
+                                <span class="tag required">Bylaw Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Hold organizational board meeting</div>
+                            <div class="item-description">Conduct first official meeting to adopt bylaws, elect officers, approve IRS application, authorize bank account, and set fiscal year. Document all decisions in meeting minutes.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Document Everything</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Adopt conflict of interest policy</div>
+                            <div class="item-description">Implement written policy to manage conflicts. IRS strongly recommends for all 501(c)(3)s. Have each board member sign annually and disclose any potential conflicts.</div>
+                            <div class="item-tags">
+                                <span class="tag required">IRS Best Practice</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish board committees</div>
+                            <div class="item-description">Create committees based on needs: Finance, Governance, Fundraising, Programs. Even small boards benefit from committee structure to distribute workload.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create board orientation materials</div>
+                            <div class="item-description">Develop board handbook with mission, bylaws, policies, financials, and expectations. Provide training on fiduciary duties (care, loyalty, obedience) and nonprofit governance.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="board">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set regular board meeting schedule</div>
+                            <div class="item-description">Establish meeting frequency (monthly or quarterly typical for new nonprofits). Create annual calendar, set expectations for attendance and participation.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Board Diversity:</strong> Aim for diversity in skills, backgrounds, ages, and perspectives. A diverse board makes better decisions and opens more doors for your organization.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Setup Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Financial Management Setup
+                        <span class="section-count" id="financial-count">0/8</span>
+                    </h2>
+                    <p class="section-description">Establish sound financial systems and controls</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Open dedicated nonprofit bank account</div>
+                            <div class="item-description">Open account in organization's name using EIN. Require two signatures for checks above certain amount. Never commingle personal and organizational funds.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Legal Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set up accounting system</div>
+                            <div class="item-description">Implement bookkeeping system (QuickBooks Nonprofit, spreadsheets initially). Create chart of accounts separating income sources and expense categories for easy Form 990 reporting.</div>
+                            <div class="item-tags">
+                                <span class="tag required">For IRS Reporting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create first-year budget</div>
+                            <div class="item-description">Develop realistic operating budget including all expenses and projected income. Required for IRS Form 1023 (3-year projections). Board must approve budget annually.</div>
+                            <div class="item-tags">
+                                <span class="tag required">IRS Application</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish internal financial controls</div>
+                            <div class="item-description">Implement checks and balances: separate check writing/depositing/reconciling duties, require documentation for expenses, board review of statements, spending approval limits.</div>
+                            <div class="item-tags">
+                                <span class="tag">Best Practice</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set up donor tracking system</div>
+                            <div class="item-description">Create system to record donations, donor information, and acknowledgments. Can start with spreadsheet but consider CRM as you grow. Essential for proper receipting.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create gift acknowledgment templates</div>
+                            <div class="item-description">Develop IRS-compliant donation receipts. Must include: organization name, amount, date, statement that no goods/services provided (or their value), tax-exempt status.</div>
+                            <div class="item-tags">
+                                <span class="tag required">IRS Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Plan for Form 990 filing</div>
+                            <div class="item-description">Understand annual filing requirements: 990-N (≤$50k receipts), 990-EZ (≤$200k), or full 990. Due May 15 for calendar year. Failure to file 3 years = automatic revocation.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Annual Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="financial">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Consider financial expertise</div>
+                            <div class="item-description">Engage bookkeeper or accountant, especially after receiving funds. At minimum, consult CPA for system setup and first Form 990 filing.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Financial Transparency:</strong> Remember that Form 990s are public documents. Donors, media, and watchdog groups can access them. Accuracy and transparency build trust.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Development Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Program Development & Evaluation
+                        <span class="section-count" id="program-count">0/6</span>
+                    </h2>
+                    <p class="section-description">Design impactful programs with measurable outcomes</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Design core programs aligned with mission</div>
+                            <div class="item-description">Develop specific programs that directly address identified needs. Define target population, services provided, delivery methods, and required resources.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set measurable program goals</div>
+                            <div class="item-description">Establish clear objectives with quantifiable outcomes. Example: "Improve reading levels of 50 children by one grade level within one year." Essential for grant applications.</div>
+                            <div class="item-tags">
+                                <span class="tag">For Funders</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create implementation timeline</div>
+                            <div class="item-description">Develop realistic timeline for program rollout. Consider pilot phase to test and refine before full launch. Include milestones and resource allocation.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish evaluation metrics</div>
+                            <div class="item-description">Define how you'll measure success: pre/post tests, surveys, attendance tracking, outcome documentation. Build data collection into program operations from the start.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Identify community partners</div>
+                            <div class="item-description">Research potential collaborators: other nonprofits, schools, government agencies. Partnerships can enhance programs, avoid duplication, and strengthen funding applications.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="program">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Develop program budget</div>
+                            <div class="item-description">Create detailed budget for each program including staff time, materials, overhead allocation. Understanding true program costs is essential for sustainability and grant writing.</div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Logic Model Components</h4>
+                        <ul>
+                            <li><strong>Inputs:</strong> Resources needed (staff, volunteers, funds, materials)</li>
+                            <li><strong>Activities:</strong> What you'll do (workshops, services, events)</li>
+                            <li><strong>Outputs:</strong> What you'll produce (# served, sessions held)</li>
+                            <li><strong>Outcomes:</strong> Changes in participants (knowledge, behavior)</li>
+                            <li><strong>Impact:</strong> Long-term community change</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fundraising Strategy Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Fundraising Strategy
+                        <span class="section-count" id="fundraising-count">0/6</span>
+                    </h2>
+                    <p class="section-description">Build sustainable revenue streams</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create comprehensive fundraising plan</div>
+                            <div class="item-description">Map out funding strategy including individual donations, grants, events, corporate sponsorships, and earned income. Set realistic goals for each revenue stream.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Research grant opportunities</div>
+                            <div class="item-description">Identify foundations, corporate giving programs, and government grants aligned with your mission. Note application deadlines and requirements. Start with smaller, local grants.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Develop donor cultivation strategy</div>
+                            <div class="item-description">Plan how to identify, engage, and steward individual donors. Start with board members and close supporters. Remember: people give to people they trust.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set up online donation capability</div>
+                            <div class="item-description">Enable online giving through your website. Choose platform considering fees, ease of use, and donor data access. Ensure proper security for payment processing.</div>
+                            <div class="item-tags">
+                                <span class="tag">Modern Essential</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Plan signature fundraising event</div>
+                            <div class="item-description">If appropriate, design annual event that raises funds and awareness. Consider effort vs. return. Events can be great for visibility but labor-intensive.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="fundraising">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish board giving expectations</div>
+                            <div class="item-description">Set clear expectations for board member contributions. 100% board giving (at any level) is important for grant applications and demonstrates commitment.</div>
+                            <div class="item-tags">
+                                <span class="tag">Best Practice</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Diversification:</strong> Avoid over-reliance on any single funding source. A healthy nonprofit typically has at least 3-5 different revenue streams to ensure stability.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Operations & Infrastructure
+                        <span class="section-count" id="operations-count">0/8</span>
+                    </h2>
+                    <p class="section-description">Establish efficient organizational systems</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Determine staffing needs</div>
+                            <div class="item-description">Decide between all-volunteer model or hiring staff. If hiring, create job descriptions, determine fair compensation, and understand employment law compliance.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Set up payroll systems (if hiring)</div>
+                            <div class="item-description">Register for payroll taxes, workers' compensation, unemployment insurance. Use payroll service to ensure compliance with tax withholding and reporting requirements.</div>
+                            <div class="item-tags">
+                                <span class="tag">If Applicable</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Secure office space or establish remote setup</div>
+                            <div class="item-description">Determine workspace needs. Many start from home offices. If renting space, factor in utilities, insurance, and ensure zoning compliance.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Obtain necessary equipment and technology</div>
+                            <div class="item-description">Acquire computers, software, phone system, and program-specific equipment. Explore nonprofit discounts through TechSoup, Microsoft, Google for Nonprofits.</div>
+                            <div class="item-tags">
+                                <span class="tag">Cost Savings Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Purchase appropriate insurance coverage</div>
+                            <div class="item-description">Obtain general liability, directors & officers (D&O), property insurance, and workers' comp if applicable. Consult insurance broker familiar with nonprofits.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Risk Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Develop personnel policies</div>
+                            <div class="item-description">Create employee handbook covering work hours, leave policies, code of conduct, anti-discrimination policies. Ensure compliance with federal and state employment laws.</div>
+                            <div class="item-tags">
+                                <span class="tag">If Hiring</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish record-keeping systems</div>
+                            <div class="item-description">Set up organized filing for corporate documents, financial records, donor information, and program data. Implement document retention policy for compliance.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="operations">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create volunteer management system</div>
+                            <div class="item-description">Develop volunteer recruitment, screening, training, and recognition processes. Consider volunteer agreements and background checks if working with vulnerable populations.</div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Essential Insurance Types</h4>
+                        <ul>
+                            <li><strong>General Liability:</strong> Covers accidents, injuries at events</li>
+                            <li><strong>D&O Insurance:</strong> Protects board members' decisions</li>
+                            <li><strong>Property:</strong> Covers equipment, office contents</li>
+                            <li><strong>Workers' Comp:</strong> Required with employees in most states</li>
+                            <li><strong>Professional Liability:</strong> If providing professional services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing & Outreach Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Marketing & Community Outreach
+                        <span class="section-count" id="marketing-count">0/6</span>
+                    </h2>
+                    <p class="section-description">Build visibility and engage your community</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Develop brand identity</div>
+                            <div class="item-description">Create professional logo, select colors and fonts, develop brand guidelines. Consistent branding builds recognition and trust. Consider pro bono design help.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Launch professional website</div>
+                            <div class="item-description">Create website with mission, programs, donation capability, and contact info. Ensure mobile-friendly design. Consider SEO to help people find you.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Modern Essential</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Establish social media presence</div>
+                            <div class="item-description">Create profiles on platforms where your audience is active. Develop content calendar for regular posting. Share stories, updates, and calls to action.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Build email list and newsletter</div>
+                            <div class="item-description">Start collecting email addresses from supporters. Send regular updates about impact, needs, and opportunities. Use email marketing platform for compliance and analytics.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Create marketing materials</div>
+                            <div class="item-description">Develop brochure, one-page fact sheet, and presentation template. Ensure consistent messaging about mission, programs, and impact across all materials.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="marketing">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Plan community engagement strategy</div>
+                            <div class="item-description">Identify speaking opportunities, community events, and networking groups. Build relationships with local media. Consider hosting open house or launch event.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Storytelling Power:</strong> People connect with stories, not statistics. Collect and share stories of lives changed by your work (with permission). One powerful story can inspire more support than pages of data.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance & Reporting Section -->
+            <div class="assessment-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2 class="section-title">
+                        Ongoing Compliance & Reporting
+                        <span class="section-count" id="compliance-count">0/7</span>
+                    </h2>
+                    <p class="section-description">Maintain legal status and accountability</p>
+                    <span class="section-toggle">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">File annual Form 990 with IRS</div>
+                            <div class="item-description">File appropriate version by May 15 annually. Remember: failure to file for 3 consecutive years results in automatic revocation of tax-exempt status.</div>
+                            <div class="item-tags">
+                                <span class="tag critical">Annual Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Submit state annual reports</div>
+                            <div class="item-description">File required state corporate annual/biennial reports to maintain good standing. Update officer and address information. Pay required fees on time.</div>
+                            <div class="item-tags">
+                                <span class="tag required">State Requirement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Renew charitable solicitation registration</div>
+                            <div class="item-description">Renew state fundraising registrations annually in all states where you solicit donations. Include Form 990 and any required financial reports.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Maintain public support test</div>
+                            <div class="item-description">After 5 years, ensure you meet IRS public support requirements to remain a public charity (vs. private foundation). Generally need 1/3 of support from public sources.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Follow lobbying limitations</div>
+                            <div class="item-description">Understand that 501(c)(3)s can do limited lobbying but no political campaign activity. Consider filing 501(h) election if you plan to lobby regularly.</div>
+                            <div class="item-tags">
+                                <span class="tag">Know the Rules</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Conduct annual board review</div>
+                            <div class="item-description">Review and update bylaws, policies, and board composition annually. Ensure continued alignment with mission and compliance with all regulations.</div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-category="compliance">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox"></div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title">Consider independent audit</div>
+                            <div class="item-description">Plan for financial audit when required by state law (often at $500k+ revenue) or requested by major funders. Builds credibility and identifies control improvements.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-card">
+                        <strong>Compliance Calendar:</strong> Create an annual compliance calendar with all filing deadlines. Assign responsibility and set reminders 30 days before each deadline to avoid penalties.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section">
+                <div class="results-header">
+                    <h2 class="results-title">Your Formation Progress</h2>
+                    <p>Track your nonprofit startup journey and identify next steps</p>
+                </div>
+                <div class="results-content">
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <h4>Tasks Complete</h4>
+                            <div class="amount" id="totalCompleted">0/56</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Progress</h4>
+                            <div class="amount" id="progressPercentage">0%</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Categories Complete</h4>
+                            <div class="amount" id="categoriesComplete">0/9</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Formation Phase</h4>
+                            <div class="amount" id="formationPhase">Planning</div>
+                        </div>
+                    </div>
+
+                    <div class="readiness-analysis" id="readinessAnalysis">
+                        <h4>Formation Status</h4>
+                        <p>Start checking off completed items above to track your progress through the nonprofit formation process. This tool will provide personalized guidance based on your completion status.</p>
+                    </div>
+
+                    <div class="priority-items" id="priorityItems" style="display: none;">
+                        <h4>Priority Action Items</h4>
+                        <ul class="priority-list" id="priorityList">
+                        </ul>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="generateReport()">Generate Full Report</button>
+                        <button class="btn btn-accent" onclick="saveProgress()">Save Progress</button>
+                        <button class="btn btn-secondary" onclick="resetChecklist()">Reset Checklist</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h3>Essential Resources</h3>
+                <div class="resource-grid">
+                    <div class="resource-item">
+                        <h4>IRS Resources</h4>
+                        <p>Publication 557 on tax-exempt status, Form 1023 instructions, and Compliance Guide for 501(c)(3) Public Charities.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>State Resources</h4>
+                        <p>Secretary of State incorporation forms, Attorney General charitable registration, and state-specific nonprofit guides.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Board Governance</h4>
+                        <p>BoardSource materials, fiduciary duty guides, and sample bylaws and policies for effective governance.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Financial Management</h4>
+                        <p>Nonprofit accounting guides, Form 990 preparation resources, and internal control best practices.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Fundraising Tools</h4>
+                        <p>Grant research databases, donor management systems, and fundraising strategy templates.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Compliance Support</h4>
+                        <p>National Council of Nonprofits, state associations, and professional development opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let checkedItems = new Set();
+        let categoryData = {
+            mission: { total: 4, completed: 0 },
+            legal: { total: 8, completed: 0 },
+            board: { total: 7, completed: 0 },
+            financial: { total: 8, completed: 0 },
+            program: { total: 6, completed: 0 },
+            fundraising: { total: 6, completed: 0 },
+            operations: { total: 8, completed: 0 },
+            marketing: { total: 6, completed: 0 },
+            compliance: { total: 7, completed: 0 }
+        };
+        let totalItems = 60;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCheckboxes();
+            loadSavedProgress();
+            updateAllResults();
+        });
+
+        function initializeCheckboxes() {
+            const checklistItems = document.querySelectorAll('.checklist-item');
+            
+            checklistItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const checkbox = item.querySelector('.custom-checkbox');
+                    const category = item.getAttribute('data-category');
+                    toggleItem(checkbox, item, category, index);
+                });
+            });
+        }
+
+        function toggleItem(checkbox, item, category, index) {
+            if (checkedItems.has(index)) {
+                // Uncheck
+                checkedItems.delete(index);
+                checkbox.classList.remove('checked');
+                item.classList.remove('completed');
+                categoryData[category].completed--;
+            } else {
+                // Check
+                checkedItems.add(index);
+                checkbox.classList.add('checked');
+                item.classList.add('completed');
+                categoryData[category].completed++;
+            }
+            
+            updateAllResults();
+            saveProgressToLocalStorage();
+        }
+
+        function updateAllResults() {
+            updateCategoryCounts();
+            updateProgressBar();
+            updateSummaryCards();
+            updateAnalysis();
+            updatePriorityItems();
+        }
+
+        function updateCategoryCounts() {
+            // Update individual category counts
+            for (const [category, data] of Object.entries(categoryData)) {
+                const countElement = document.getElementById(`${category}-count`);
+                if (countElement) {
+                    countElement.textContent = `${data.completed}/${data.total}`;
+                }
+            }
+        }
+
+        function updateProgressBar() {
+            const completed = checkedItems.size;
+            const percentage = Math.round((completed / totalItems) * 100);
+            
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            
+            const progressText = document.getElementById('progressText');
+            if (percentage === 100) {
+                progressText.textContent = 'Congratulations! Nonprofit formation complete!';
+            } else if (percentage >= 75) {
+                progressText.textContent = `${percentage}% Complete - Almost there!`;
+            } else if (percentage >= 50) {
+                progressText.textContent = `${percentage}% Complete - Great progress!`;
+            } else if (percentage >= 25) {
+                progressText.textContent = `${percentage}% Complete - Keep going!`;
+            } else {
+                progressText.textContent = `${percentage}% Complete - Getting started`;
+            }
+        }
+
+        function updateSummaryCards() {
+            const completed = checkedItems.size;
+            const percentage = Math.round((completed / totalItems) * 100);
+            const categoriesComplete = Object.values(categoryData).filter(cat => cat.completed === cat.total).length;
+            
+            document.getElementById('totalCompleted').textContent = `${completed}/${totalItems}`;
+            document.getElementById('progressPercentage').textContent = `${percentage}%`;
+            document.getElementById('categoriesComplete').textContent = `${categoriesComplete}/9`;
+            
+            // Update progress percentage styling
+            const percentageCard = document.getElementById('progressPercentage').parentElement;
+            if (percentage >= 80) {
+                percentageCard.className = 'summary-card positive';
+            } else if (percentage >= 50) {
+                percentageCard.className = 'summary-card';
+            } else {
+                percentageCard.className = 'summary-card negative';
+            }
+            
+            // Update formation phase
+            const phaseElement = document.getElementById('formationPhase');
+            if (percentage === 100) {
+                phaseElement.textContent = 'Complete!';
+                phaseElement.parentElement.className = 'summary-card positive';
+            } else if (percentage >= 75) {
+                phaseElement.textContent = 'Finalizing';
+                phaseElement.parentElement.className = 'summary-card positive';
+            } else if (percentage >= 50) {
+                phaseElement.textContent = 'Implementing';
+                phaseElement.parentElement.className = 'summary-card';
+            } else if (percentage >= 25) {
+                phaseElement.textContent = 'Forming';
+                phaseElement.parentElement.className = 'summary-card';
+            } else {
+                phaseElement.textContent = 'Planning';
+                phaseElement.parentElement.className = 'summary-card';
+            }
+        }
+
+        function updateAnalysis() {
+            const percentage = Math.round((checkedItems.size / totalItems) * 100);
+            const analysisDiv = document.getElementById('readinessAnalysis');
+            
+            let analysis = '<h4>Formation Status</h4>';
+            
+            if (percentage === 100) {
+                analysis += '<p><strong>Congratulations!</strong> You\'ve completed all essential steps for forming your 501(c)(3) nonprofit. Your organization is ready to make a lasting impact!</p>';
+                analysis += '<p><strong>Next Steps:</strong> Focus on strategic planning, board development, program expansion, and building sustainable funding streams.</p>';
+            } else if (percentage >= 75) {
+                analysis += '<p><strong>Nearly Complete!</strong> You\'re in the final stages of nonprofit formation. Focus on completing remaining compliance and operational tasks.</p>';
+                analysis += '<p><strong>Priority:</strong> Complete any remaining legal filings, finalize operational systems, and prepare for your official launch.</p>';
+            } else if (percentage >= 50) {
+                analysis += '<p><strong>Making Great Progress!</strong> Core formation elements are in place. Continue building your infrastructure and preparing for operations.</p>';
+                analysis += '<p><strong>Focus Areas:</strong> Complete IRS application if pending, develop programs, build fundraising capacity, and establish operational systems.</p>';
+            } else if (percentage >= 25) {
+                analysis += '<p><strong>Foundation Building.</strong> You\'ve started key formation steps. Maintain momentum by tackling legal requirements and board development.</p>';
+                analysis += '<p><strong>Key Tasks:</strong> Complete incorporation, assemble your board, apply for EIN, and begin drafting governing documents.</p>';
+            } else {
+                analysis += '<p><strong>Getting Started.</strong> You\'re beginning your nonprofit journey. Focus on mission clarity and understanding legal requirements.</p>';
+                analysis += '<p><strong>First Steps:</strong> Clarify your mission, research community needs, understand 501(c)(3) requirements, and begin assembling your founding team.</p>';
+            }
+            
+            analysisDiv.innerHTML = analysis;
+        }
+
+        function updatePriorityItems() {
+            const priorityDiv = document.getElementById('priorityItems');
+            const priorityList = document.getElementById('priorityList');
+            
+            // Find incomplete critical items
+            const criticalIncomplete = [];
+            const categories = ['mission', 'legal', 'board', 'financial'];
+            
+            categories.forEach(category => {
+                if (categoryData[category].completed < categoryData[category].total) {
+                    const items = document.querySelectorAll(`[data-category="${category}"] .item-title`);
+                    items.forEach((item, index) => {
+                        const parent = item.closest('.checklist-item');
+                        if (!parent.classList.contains('completed')) {
+                            // Check if it has critical or required tags
+                            const tags = parent.querySelectorAll('.tag.critical, .tag.required');
+                            if (tags.length > 0) {
+                                criticalIncomplete.push(item.textContent);
+                            }
+                        }
+                    });
+                }
+            });
+            
+            if (criticalIncomplete.length > 0) {
+                priorityDiv.style.display = 'block';
+                priorityList.innerHTML = criticalIncomplete
+                    .slice(0, 5) // Show top 5 priorities
+                    .map(item => `<li>${item}</li>`)
+                    .join('');
+            } else if (checkedItems.size < totalItems) {
+                // Show next uncompleted items
+                const nextItems = [];
+                const allItems = document.querySelectorAll('.checklist-item:not(.completed) .item-title');
+                for (let i = 0; i < Math.min(5, allItems.length); i++) {
+                    nextItems.push(allItems[i].textContent);
+                }
+                
+                if (nextItems.length > 0) {
+                    priorityDiv.style.display = 'block';
+                    priorityList.innerHTML = nextItems
+                        .map(item => `<li>${item}</li>`)
+                        .join('');
+                } else {
+                    priorityDiv.style.display = 'none';
+                }
+            } else {
+                priorityDiv.style.display = 'none';
+            }
+        }
+
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            header.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        }
+
+        function generateReport() {
+            const percentage = Math.round((checkedItems.size / totalItems) * 100);
+            let report = "501(c)(3) NONPROFIT FORMATION CHECKLIST REPORT\n";
+            report += "=" + "=".repeat(50) + "\n\n";
+            report += `Overall Progress: ${percentage}% (${checkedItems.size}/${totalItems} tasks completed)\n\n`;
+            
+            report += "CATEGORY BREAKDOWN:\n";
+            report += "-".repeat(30) + "\n";
+            
+            const categoryNames = {
+                mission: 'Mission & Vision',
+                legal: 'Legal Formation',
+                board: 'Board Formation',
+                financial: 'Financial Management',
+                program: 'Program Development',
+                fundraising: 'Fundraising Strategy',
+                operations: 'Operations Setup',
+                marketing: 'Marketing & Outreach',
+                compliance: 'Compliance & Reporting'
+            };
+
+            for (const [key, name] of Object.entries(categoryNames)) {
+                const data = categoryData[key];
+                const catPercentage = Math.round((data.completed / data.total) * 100);
+                const status = catPercentage === 100 ? '✓ Complete' : catPercentage >= 66 ? '◐ Nearly Complete' : '○ In Progress';
+                report += `${name}: ${catPercentage}% (${data.completed}/${data.total}) ${status}\n`;
+            }
+
+            report += "\nCRITICAL NEXT STEPS:\n";
+            report += "-".repeat(30) + "\n";
+            
+            // Add specific recommendations based on what's incomplete
+            if (categoryData.legal.completed < categoryData.legal.total) {
+                report += "• Complete legal formation requirements (incorporation, EIN, 501(c)(3) application)\n";
+            }
+            if (categoryData.board.completed < 3) {
+                report += "• Assemble founding board of directors (minimum 3 members)\n";
+            }
+            if (categoryData.financial.completed < 2) {
+                report += "• Open nonprofit bank account and establish accounting system\n";
+            }
+            if (categoryData.mission.completed === 0) {
+                report += "• Clarify mission statement and conduct needs assessment\n";
+            }
+
+            report += "\nTIMELINE CONSIDERATIONS:\n";
+            report += "-".repeat(30) + "\n";
+            report += "• IRS Form 1023 must be filed within 27 months of incorporation\n";
+            report += "• Form 990 due annually by May 15 (for calendar year filers)\n";
+            report += "• State filings have varying deadlines - check your state requirements\n";
+            report += "• Charitable solicitation registration required BEFORE fundraising\n";
+
+            report += "\n" + "=".repeat(50) + "\n";
+            report += "Generated by Foundation Group Nonprofit Formation Checklist\n";
+            report += new Date().toLocaleDateString() + "\n";
+            
+            // For now, show in alert - in production, this would generate a PDF
+            alert(report);
+        }
+
+        function saveProgress() {
+            saveProgressToLocalStorage();
+            alert('Progress saved! Your checklist will be restored when you return to this page.');
+        }
+
+        function saveProgressToLocalStorage() {
+            const saveData = {
+                checkedItems: Array.from(checkedItems),
+                savedDate: new Date().toISOString()
+            };
+            localStorage.setItem('nonprofitFormationProgress', JSON.stringify(saveData));
+        }
+
+        function loadSavedProgress() {
+            const saved = localStorage.getItem('nonprofitFormationProgress');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    const checklistItems = document.querySelectorAll('.checklist-item');
+                    
+                    data.checkedItems.forEach(index => {
+                        if (index < checklistItems.length) {
+                            const item = checklistItems[index];
+                            const checkbox = item.querySelector('.custom-checkbox');
+                            const category = item.getAttribute('data-category');
+                            
+                            checkedItems.add(index);
+                            checkbox.classList.add('checked');
+                            item.classList.add('completed');
+                            categoryData[category].completed++;
+                        }
+                    });
+                } catch (e) {
+                    console.error('Error loading saved progress:', e);
+                }
+            }
+        }
+
+        function resetChecklist() {
+            if (confirm('Are you sure you want to reset your entire checklist? This will clear all progress and cannot be undone.')) {
+                checkedItems.clear();
+                
+                // Reset all checkboxes and items
+                document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('checked');
+                });
+                
+                document.querySelectorAll('.checklist-item').forEach(item => {
+                    item.classList.remove('completed');
+                });
+                
+                // Reset category data
+                for (const category of Object.keys(categoryData)) {
+                    categoryData[category].completed = 0;
+                }
+                
+                // Clear saved progress
+                localStorage.removeItem('nonprofitFormationProgress');
+                
+                updateAllResults();
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
